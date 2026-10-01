@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: hermes-telegram-bot
+    env: docker
+    dockerfilePath: ./Dockerfile.telegram
+    plan: free
+    region: oregon
+    healthCheckPath: /
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        value: 8968385636:AAGdU5sXiltqO39ryXiNPlEv8gMwvk9SEBQ
+      - key: HERMES_MODEL
+        value: openrouter/auto
+      - key: HERMES_PROVIDER
+        value: openrouter
+      - key: OPENROUTER_API_KEY
+        sync: false
